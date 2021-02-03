@@ -35,22 +35,17 @@ let etapas =[
                     {url:'1_1.png',legenda:'Vice-Prefeito',small:true}
                 ]
             },
+            {
+                numero: '84',
+                nome: 'fdsl',
+                partido:'cxbd',
+                vice:'sdfs',
+                fotos:[
+                    {url:'2.png', legenda:'Prefeito'},
+                    {url:'2_1.png',legenda:'Vice-Prefeito', small:true}
+                ]
+            }
+
         ]
-    },
-    
-   { titulo: 'Prefeito',
-    numeros: 2,
-    candidatos: [
-        {
-            numero: '84',
-            nome: 'fdsl',
-            partido:'cxbd',
-            vice:'sdfs',
-            fotos:[
-                {url:'2.png', legenda:'Prefeito'},
-                {url:'2_1.png',legenda:'Vice-Prefeito', small:true}
-            ]
-        },
-    ]
-}
+    }
 ]

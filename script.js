@@ -8,6 +8,7 @@ let numeros = document.querySelector('.d-1-3')
 let etapaAtual = 0;
 let numero = '';
 let votoBranco = false;
+let votos = [];
 
 function comecarEtapa(){
     let etapa = etapas[etapaAtual];
@@ -50,8 +51,13 @@ function atualizaInterface(){
         let fotosHtml = '';
 
         for (let i in candidato.fotos ){
-            fotosHtml += `<div class="candidato"> <img src="img/${candidato.fotos[i].url}" alt="">${candidato.fotos[i].legenda}</div>`
-        }
+            if(candidato.fotos[i].small){
+                fotosHtml += `<div class="candidato small"> <img src="img/${candidato.fotos[i].url}" alt="">${candidato.fotos[i].legenda}</div>`
+
+            }else{            
+                fotosHtml += `<div class="candidato"> <img src="img/${candidato.fotos[i].url}" alt="">${candidato.fotos[i].legenda}</div>`
+            }       
+         }
 
         lateral.innerHTML = fotosHtml;
     }else{
@@ -97,8 +103,16 @@ function confirma(){
 
     if(votoBranco === true){
         votoConfirmado = true;
+        votos.push({
+            etapa: etapas[etapaAtual].titulo,
+            voto: 'branco'
+        });
     }else if(numero.length === etapa.numeros){
         votoConfirmado = true;
+        votos.push({
+            etapa: etapas[etapaAtual].titulo,
+            voto: numero
+        });
     }
 
     if(votoConfirmado){
@@ -106,11 +120,10 @@ function confirma(){
         if(etapas[etapaAtual] !== undefined){
             comecarEtapa();
         }else{
-            alert("FIM");
+            document.querySelector('.tela').innerHTML = '<div class = "aviso-grande-fim pisca">FIM</div>'
+            console.log(votos);
         }
     }
 }
 
 comecarEtapa();
-
-// 1:49:00

@@ -151,3 +151,11 @@ body{
     font-weight: bold;
     color:red;
 }
+
+.aviso-grande-fim{
+    font-size: 70px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
